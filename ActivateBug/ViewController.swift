@@ -14,11 +14,6 @@ class ViewController: NSViewController {
     @IBOutlet
     var tableView: NSTableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
 }
 
 extension ViewController : NSTableViewDataSource {
