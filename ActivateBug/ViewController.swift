@@ -8,19 +8,37 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    let names = ["Moe","Larry","Curly"]
+    
+    @IBOutlet
+    var tableView: NSTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
+extension ViewController : NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return self.names.count
+    }
+    
+}
+
+extension ViewController : NSTableViewDelegate {
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("item"), owner: nil) as! ItemView
+        view.label.stringValue = self.names[row]
+        return view
+    }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 50
+    }
+    
+}
