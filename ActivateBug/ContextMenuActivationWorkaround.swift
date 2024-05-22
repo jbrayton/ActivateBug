@@ -11,11 +11,11 @@ class ContextMenuActivationWorkaround {
     
     static let shared = ContextMenuActivationWorkaround()
     
-    private var monitor: Any?
+    private var rightClickEventMonitor: Any?
 
-    func applyBugFix() {
+    func applyWorkaround() {
 
-        self.monitor = NSEvent.addLocalMonitorForEvents(matching: [.rightMouseDown], handler: { (_ event: NSEvent) -> NSEvent? in
+        self.rightClickEventMonitor = NSEvent.addLocalMonitorForEvents(matching: [.rightMouseDown], handler: { (_ event: NSEvent) -> NSEvent? in
             
             if !NSApplication.shared.isActive {
 
@@ -30,6 +30,13 @@ class ContextMenuActivationWorkaround {
             return event
             
         })
+    }
+    
+    func removeWorkaround() {
+        if let rightClickEventMonitor = self.rightClickEventMonitor {
+            NSEvent.removeMonitor(rightClickEventMonitor)
+            self.rightClickEventMonitor = nil
+        }
     }
 
 }

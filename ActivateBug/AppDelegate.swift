@@ -10,13 +10,5 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let shouldApplyBugFix = true
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if self.shouldApplyBugFix {
-            ContextMenuActivationWorkaround.shared.applyBugFix()
-        }
-    }
-    
 }
 

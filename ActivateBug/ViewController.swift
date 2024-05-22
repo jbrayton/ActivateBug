@@ -13,6 +13,20 @@ class ViewController: NSViewController {
     
     @IBOutlet
     var tableView: NSTableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.rowHeight = 50
+    }
+    
+    @IBAction
+    func handleCheckbox( _ input: NSButton ) {
+        if input.state == .on {
+            ContextMenuActivationWorkaround.shared.applyWorkaround()
+        } else {
+            ContextMenuActivationWorkaround.shared.removeWorkaround()
+        }
+    }
 
 }
 
@@ -30,10 +44,6 @@ extension ViewController : NSTableViewDelegate {
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("item"), owner: nil) as! ItemView
         view.label.stringValue = self.names[row]
         return view
-    }
-    
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 50
     }
     
 }
