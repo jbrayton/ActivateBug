@@ -709,14 +709,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-tN-JJ7">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="218"/>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-tN-JJ7">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" id="lpq-IE-JZe">
-                                    <rect key="frame" x="1" y="1" width="478" height="216"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" id="EIm-wL-p4K" customClass="TableView" customModule="ActivateBug" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="216"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="96" rowSizeStyle="automatic" viewBased="YES" id="EIm-wL-p4K" customClass="TableView" customModule="ActivateBug" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -750,7 +750,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="I9q-lP-DrV">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <rect key="frame" x="1" y="202" width="478" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="C6G-d7-F4f">
@@ -758,25 +758,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nXQ-B5-ZX4">
-                                <rect key="frame" x="18" y="233" width="442" height="18"/>
-                                <buttonCell key="cell" type="check" title="Enable workaround" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ues-2N-Mze">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="handleCheckbox:" target="XfG-lQ-9wD" id="OS2-vT-Zma"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="gm1-tN-JJ7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="EkF-6r-zhz"/>
-                            <constraint firstItem="nXQ-B5-ZX4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="F8f-Vf-neS"/>
                             <constraint firstAttribute="trailing" secondItem="gm1-tN-JJ7" secondAttribute="trailing" id="KWL-gd-sQz"/>
-                            <constraint firstItem="nXQ-B5-ZX4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="YWH-Be-wo7"/>
+                            <constraint firstItem="gm1-tN-JJ7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="LXC-5z-JC0"/>
                             <constraint firstAttribute="bottom" secondItem="gm1-tN-JJ7" secondAttribute="bottom" id="aED-oF-NHC"/>
-                            <constraint firstItem="gm1-tN-JJ7" firstAttribute="top" secondItem="nXQ-B5-ZX4" secondAttribute="bottom" constant="16" id="gxO-66-kCc"/>
-                            <constraint firstAttribute="trailing" secondItem="nXQ-B5-ZX4" secondAttribute="trailing" constant="20" symbolic="YES" id="xh9-Bk-0v3"/>
                         </constraints>
                     </view>
                     <connections>

@@ -18,15 +18,6 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         self.tableView.rowHeight = 50
     }
-    
-    @IBAction
-    func handleCheckbox( _ input: NSButton ) {
-        if input.state == .on {
-            ContextMenuActivationWorkaround.shared.applyWorkaround()
-        } else {
-            ContextMenuActivationWorkaround.shared.removeWorkaround()
-        }
-    }
 
 }
 
